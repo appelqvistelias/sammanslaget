@@ -1,19 +1,9 @@
 .list-item-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 2rem;
   border: 1px solid black;
   border-radius: 0.5rem;
   background-color: bisque;
-}
-
-.title {
-  font-weight: 800;
-  color: hotpink;
-}
-
-.coordinates {
-  color: hotpink;
 }
