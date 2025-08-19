@@ -1,0 +1,87 @@
+.compass-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f3f3f3;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.enable-btn {
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.enable-btn:hover {
+  background: #1e4fc5;
+}
+
+.compass {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border: 4px solid #333;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 70px;
+  background: red;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.2s linear;
+}
+
+.north,
+.east,
+.south,
+.west {
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.north {
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.east {
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.south {
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.west {
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.readout {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+}
