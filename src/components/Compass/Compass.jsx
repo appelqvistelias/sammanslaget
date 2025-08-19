@@ -3,8 +3,6 @@ import "./Compass.css"; // import CSS file
 
 export default function Compass() {
   const target = { lat: 57.6639608448853, lon: 11.931189014191505 }; // Example: Flatås Torg
-  //57.70986997664876, 11.939058824329294 Karlatornet
-  //57.6639608448853, 11.931189014191505 Flatås Torg
   const [heading, setHeading] = useState(0);
   const [position, setPosition] = useState(null);
   const [bearing, setBearing] = useState(0);
@@ -12,6 +10,7 @@ export default function Compass() {
   const [displayAngle, setDisplayAngle] = useState(0);
 
   const rafRef = useRef(null);
+  const watchIdRef = useRef(null);
 
   function getBearing(lat1, lon1, lat2, lon2) {
     const φ1 = (lat1 * Math.PI) / 180;
@@ -27,22 +26,39 @@ export default function Compass() {
     return (θ + 360) % 360;
   }
 
-  //geolocation
+  //geolocation user position
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((pos) => {
-        setPosition({
-          lat: pos.coords.latitude,
-          lon: pos.coords.longitude,
-        });
-      });
+      watchIdRef.current = navigator.geolocation.watchPosition(
+        (pos) => {
+          setPosition({
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude,
+          });
+        },
+        (err) => console.error("Geolocation error:", err),
+        { enableHighAccuracy: true, maximumAge: 1000, timeout: 5000 }
+      );
     }
+
+    return () => {
+      if (watchIdRef.current) {
+        navigator.geolocation.clearWatch(watchIdRef.current);
+      }
+    };
   }, []);
 
   const startOrientation = () => {
     function handleOrientation(event) {
-      if (event.absolute && event.alpha != null) {
-        setHeading(event.alpha);
+      let deviceHeading = null;
+      if (event.webkitCompassHeading != null) {
+        deviceHeading = event.webkitCompassHeading;
+      } else if (event.alpha != null) {
+        deviceHeading = 360 - event.alpha;
+      }
+
+      if (deviceHeading != null) {
+        setHeading((prev) => prev + 0.1 * (deviceHeading - prev));
       }
     }
     window.addEventListener(
@@ -50,6 +66,7 @@ export default function Compass() {
       handleOrientation,
       true
     );
+    window.addEventListener("deviceorientation", handleOrientation, true);
     setPermissionGranted(true);
   };
 
