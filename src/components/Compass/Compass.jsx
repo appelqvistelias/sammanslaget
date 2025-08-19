@@ -27,6 +27,7 @@ export default function Compass() {
     return (θ + 360) % 360;
   }
 
+  //geolocation
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos) => {
@@ -72,12 +73,11 @@ export default function Compass() {
 
   useEffect(() => {
     if (position) {
-      const b = getBearing(position.lat, position.lon, target.lat, target.lon);
-      setBearing(b);
+      setBearing(
+        getBearing(position.lat, position.lon, target.lat, target.lon)
+      );
     }
-  }, [position, target.lat, target.lon]);
-
-  const angle = (bearing - heading + 360) % 360;
+  }, [position]);
 
   function getShortestAngleDiff(target, current) {
     let diff = target - current;
@@ -90,19 +90,22 @@ export default function Compass() {
   //arrow animation
   useEffect(() => {
     const animate = () => {
-      setDisplayAngle((prev) => {
-        const step = getShortestAngleDiff(diff, prev);
-        const stepSize = Math.sign(step) * Math.min(Math.abs(step), 3);
-        return prev + stepSize;
-      });
+      if (bearing != null && heading != null) {
+        // Compute the relative angle for arrow
+        const relativeAngle = getShortestAngleDiff(bearing, heading);
+
+        setDisplayAngle((prev) => {
+          const step = getShortestAngleDiff(relativeAngle, prev);
+          const stepSize = Math.sign(step) * Math.min(Math.abs(step), 3); // max 3°/frame
+          return prev + stepSize;
+        });
+      }
       rafRef.current = requestAnimationFrame(animate);
     };
 
-    cancelAnimationFrame(rafRef.current);
     rafRef.current = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(rafRef.current);
-  }, [diff]);
+  }, [bearing, heading]);
 
   return (
     <div className="compass-container">
