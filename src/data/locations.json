@@ -2,7 +2,8 @@
   {
     "name": "Polaren (1980)",
     "artist": "Charles Brånå",
-    "coordinates": "57°42'15.6\"N 11°56'09.5\"E",
+    "latitude": 57.70433,
+    "longitude": 11.936,
     "exercise": {
       "title": "Tyst koordination",
       "instructions": "Gruppen ska räkna högt från 1 till 20 – en person i taget. Ingen får bestämma turordning. Om två säger samtidigt börjar man om. Klarar ni att nå hela vägen till 20?"
@@ -12,7 +13,8 @@
   {
     "name": "Medmänskligheten (1992)",
     "artist": "Eino Hanski",
-    "coordinates": "57°42'18.3\"N 11°56'10.7\"E",
+    "latitude": 57.705083,
+    "longitude": 11.936305,
     "exercise": {
       "title": "Speglingen",
       "instructions": "Ställ er två och två framför verket. En börjar med långsamma rörelser (t.ex. lyfta en hand, luta sig lite, vrida kroppen). Den andra speglar exakt. Efter 30 sekunder byter ni roller. Det blir en ordlös dialog som bygger samförstånd."
@@ -22,7 +24,8 @@
   {
     "name": "Your 15 minutes of fame (2012)",
     "artist": "Tina Frausin",
-    "coordinates": "57°42'21.6\"N 11°56'10.2\"E",
+    "latitude": 57.705999,
+    "longitude": 11.936167,
     "exercise": {
       "title": "Gemensamt ljudlandskap",
       "instructions": "Alla stänger ögonen. En person börjar med ett ljud (t.ex. 'sus' som vind). Nästa lägger till ett nytt ljud. Fortsätt tills ni har ett helt 'ljudlandskap' tillsammans. Stanna upp och lyssna – ni har skapat en plats med bara era röster."
@@ -32,7 +35,8 @@
   {
     "name": "Di-Edersekvensen (1994)",
     "artist": "Gert Marcus",
-    "coordinates": "57°42'17.4\"N 11°56'17.5\"E",
+    "latitude": 57.704833,
+    "longitude": 11.938194,
     "exercise": {
       "title": "Färgsortering",
       "instructions": "Titta på färgerna i verket. Ställ er i en rad eller cirkel sorterade efter färgerna ni har på er kläder som bäst matchar konstverket. På så sätt blir ni en 'levande version' av konstverket."
@@ -42,7 +46,8 @@
   {
     "name": "Gränslös Tanke (1997)",
     "artist": "Eino Hanski",
-    "coordinates": "57°42'21.1\"N 11°56'16.2\"E",
+    "latitude": 57.705861,
+    "longitude": 11.937833,
     "exercise": {
       "title": "Ordflyt",
       "instructions": "Ställ er i en cirkel. En person säger ett ord högt, nästa lägger till ett nytt ord, och så fortsätter ni tills ni har en mening på 8–12 ord. Ingen får stoppa eller rätta, alla ord är välkomna. Läs upp meningen tillsammans – det är er gemensamma 'gränslösa tanke'."
