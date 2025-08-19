@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Compass.css"; // import CSS file
 
 export default function Compass() {
-  const target = { lat: 59.3262, lon: 18.0726 }; // Example: Gamla Stan
-
+  const target = { lat: 57.6639608448853, lon: 11.931189014191505 }; // Example: Flatås Torg
+  //57.70986997664876, 11.939058824329294 Karlatornet
+  //57.6639608448853, 11.931189014191505 Flatås Torg
   const [heading, setHeading] = useState(0);
   const [position, setPosition] = useState(null);
   const [bearing, setBearing] = useState(0);
   const [permissionGranted, setPermissionGranted] = useState(false);
+  const [displayAngle, setDisplayAngle] = useState(0);
+
+  const rafRef = useRef(null);
 
   function getBearing(lat1, lon1, lat2, lon2) {
     const φ1 = (lat1 * Math.PI) / 180;
@@ -75,9 +79,34 @@ export default function Compass() {
 
   const angle = (bearing - heading + 360) % 360;
 
+  function getShortestAngleDiff(target, current) {
+    let diff = target - current;
+    diff = ((diff + 540) % 360) - 180;
+    return diff;
+  }
+
+  const diff = getShortestAngleDiff(bearing, heading);
+
+  //arrow animation
+  useEffect(() => {
+    const animate = () => {
+      setDisplayAngle((prev) => {
+        const step = getShortestAngleDiff(diff, prev);
+        const stepSize = Math.sign(step) * Math.min(Math.abs(step), 3);
+        return prev + stepSize;
+      });
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [diff]);
+
   return (
     <div className="compass-container">
-      <h2>Compass to Target</h2>
+      <h2>Find Your Way</h2>
 
       {!permissionGranted ? (
         <button onClick={requestPermission} className="enable-btn">
@@ -86,19 +115,17 @@ export default function Compass() {
       ) : (
         <>
           <div className="compass">
-            <div
-              className="needle"
-              style={{ transform: `rotate(${angle}deg)` }}
+            <img
+              src="arrowTarget.svg"
+              alt="target arrow"
+              className="arrow"
+              style={{ transform: `rotate(${displayAngle}deg)` }}
             />
-            <span className="north">N</span>
-            <span className="east">E</span>
-            <span className="south">S</span>
-            <span className="west">W</span>
           </div>
-          <p className="readout">
+          {/* <p className="readout">
             Heading: {heading.toFixed(1)}° | Bearing: {bearing.toFixed(1)}° |
             Angle: {angle.toFixed(1)}°
-          </p>
+          </p> */}
         </>
       )}
     </div>
