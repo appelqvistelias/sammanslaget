@@ -26,7 +26,7 @@ export default function Compass() {
     return (θ + 360) % 360;
   }
 
-  //geolocation
+  //geolocation user position
   useEffect(() => {
     if (navigator.geolocation) {
       watchIdRef.current = navigator.geolocation.watchPosition(
