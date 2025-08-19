@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Compass />
-      <LocationList />
+      <LocationList userLocation={{ lat: 57.705, lng: 11.937 }} />
     </>
   );
 }
