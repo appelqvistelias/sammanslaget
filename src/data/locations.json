@@ -1,62 +1,52 @@
 [
   {
-    "name": "Lindholmen Science Park",
-    "description": "Innovation center with tech companies and research facilities",
-    "latitude": 57.7065,
-    "longitude": 11.9369
+    "name": "Polaren (1980)",
+    "artist": "Charles Brånå",
+    "coordinates": "57°42'15.6\"N 11°56'09.5\"E",
+    "exercise": {
+      "title": "Tyst koordination",
+      "instructions": "Gruppen ska räkna högt från 1 till 20 – en person i taget. Ingen får bestämma turordning. Om två säger samtidigt börjar man om. Klarar ni att nå hela vägen till 20?"
+    },
+    "description": "Skulpturen utforskar idéer om rörelse och transformation, som om en fast form kunde öppnas och avslöja sitt inre. Den ovala strukturen och delningen i skivor ger en känsla av både mysterium och nyfikenhet, som om vi betraktar något som inte helt hör hemma i vår värld. Brånå ville skapa en balans mellan det kända och det främmande, där betraktaren själv fyller i rörelsen och berättelse."
   },
   {
-    "name": "Lindholmen Street Food Market",
-    "description": "Popular food hall with international cuisine",
-    "latitude": 57.7073,
-    "longitude": 11.9398
+    "name": "Medmänskligheten (1992)",
+    "artist": "Eino Hanski",
+    "coordinates": "57°42'18.3\"N 11°56'10.7\"E",
+    "exercise": {
+      "title": "Speglingen",
+      "instructions": "Ställ er två och två framför verket. En börjar med långsamma rörelser (t.ex. lyfta en hand, luta sig lite, vrida kroppen). Den andra speglar exakt. Efter 30 sekunder byter ni roller. Det blir en ordlös dialog som bygger samförstånd."
+    },
+    "description": "Verket symboliserar kraften i hjälp och mottagande, där den utsträckta handen uttrycker både styrka och öppenhet. Granitens splittring visar kampen och motståndet som måste övervinnas för att nå trygghet. Hanski ville med detta gestalta sin egen erfarenhet av flykt och den mänskliga gemenskap som gjorde en ny start möjlig."
   },
   {
-    "name": "Chalmers Lindholmen",
-    "description": "Campus area of Chalmers University of Technology",
-    "latitude": 57.7068,
-    "longitude": 11.9393
+    "name": "Your 15 minutes of fame (2012)",
+    "artist": "Tina Frausin",
+    "coordinates": "57°42'21.6\"N 11°56'10.2\"E",
+    "exercise": {
+      "title": "Gemensamt ljudlandskap",
+      "instructions": "Alla stänger ögonen. En person börjar med ett ljud (t.ex. 'sus' som vind). Nästa lägger till ett nytt ljud. Fortsätt tills ni har ett helt 'ljudlandskap' tillsammans. Stanna upp och lyssna – ni har skapat en plats med bara era röster."
+    },
+    "description": "Konstverket utforskar idén om att varje individ kan få sin stund i rampljuset, och bjuder in betraktaren att själv ta plats på scenen. Genom att kombinera konst, scen och sittplats vill Frausin skapa en lekfull men reflekterande upplevelse av synlighet och delaktighet. Verket påminner om vår längtan efter uppmärksamhet och gemenskap i vardagen."
   },
   {
-    "name": "Keillers Park",
-    "description": "Green park on Ramberget with panoramic views over Gothenburg",
-    "latitude": 57.7151,
-    "longitude": 11.9387
+    "name": "Di-Edersekvensen (1994)",
+    "artist": "Gert Marcus",
+    "coordinates": "57°42'17.4\"N 11°56'17.5\"E",
+    "exercise": {
+      "title": "Färgsortering",
+      "instructions": "Titta på färgerna i verket. Ställ er i en rad eller cirkel sorterade efter färgerna ni har på er kläder som bäst matchar konstverket. På så sätt blir ni en 'levande version' av konstverket."
+    },
+    "description": "Verket handlar om förändring, rörelse och perception, där färg- och formspråket skapar en gradvis transformation som engagerar hela platsen. Marcus ville att betraktaren själv skulle uppleva sekvensen som något dynamiskt, som en utveckling från en början till ett nytt stadium. Skulpturen gestaltar kraften i påverkan och förändring, samtidigt som den öppnar för egna tolkningar kopplade till omgivningen."
   },
   {
-    "name": "Älvsnabben Ferry Terminal",
-    "description": "Ferry connection across the Göta river",
-    "latitude": 57.706,
-    "longitude": 11.9406
-  },
-  {
-    "name": "Göteborgs Tekniska College",
-    "description": "Technical college located at Lindholmen",
-    "latitude": 57.7056,
-    "longitude": 11.9392
-  },
-  {
-    "name": "Radisson Blu Riverside Hotel",
-    "description": "Modern hotel with riverside views",
-    "latitude": 57.7071,
-    "longitude": 11.9376
-  },
-  {
-    "name": "Lindholmen Art Hall",
-    "description": "Contemporary art exhibitions and cultural events",
-    "latitude": 57.708,
-    "longitude": 11.9389
-  },
-  {
-    "name": "Gothenburg Film Studios",
-    "description": "Film and media production studios",
-    "latitude": 57.7048,
-    "longitude": 11.9375
-  },
-  {
-    "name": "Ceres Park",
-    "description": "Small green area next to residential buildings",
-    "latitude": 57.7052,
-    "longitude": 11.9357
+    "name": "Gränslös Tanke (1997)",
+    "artist": "Eino Hanski",
+    "coordinates": "57°42'21.1\"N 11°56'16.2\"E",
+    "exercise": {
+      "title": "Ordflyt",
+      "instructions": "Ställ er i en cirkel. En person säger ett ord högt, nästa lägger till ett nytt ord, och så fortsätter ni tills ni har en mening på 8–12 ord. Ingen får stoppa eller rätta, alla ord är välkomna. Läs upp meningen tillsammans – det är er gemensamma 'gränslösa tanke'."
+    },
+    "description": "Verket symboliserar människans intellektuella utveckling och nyfikenhet, där former och symboler från marknivå upp mot hjärnan speglar lärande och insikt. Hanski ville visa hur idéer och kunskap byggs steg för steg, från enkla symboler till komplex förståelse. Tornet blir en metafor för kreativitet och gränslöst tänkande, med koppling till både historia och mänsklig utveckling."
   }
 ]
