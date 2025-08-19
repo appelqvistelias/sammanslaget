@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Lindholmen Science Park",
+    "description": "Innovation center with tech companies and research facilities",
+    "latitude": 57.7065,
+    "longitude": 11.9369
+  },
+  {
+    "name": "Lindholmen Street Food Market",
+    "description": "Popular food hall with international cuisine",
+    "latitude": 57.7073,
+    "longitude": 11.9398
+  },
+  {
+    "name": "Chalmers Lindholmen",
+    "description": "Campus area of Chalmers University of Technology",
+    "latitude": 57.7068,
+    "longitude": 11.9393
+  },
+  {
+    "name": "Keillers Park",
+    "description": "Green park on Ramberget with panoramic views over Gothenburg",
+    "latitude": 57.7151,
+    "longitude": 11.9387
+  },
+  {
+    "name": "Älvsnabben Ferry Terminal",
+    "description": "Ferry connection across the Göta river",
+    "latitude": 57.706,
+    "longitude": 11.9406
+  },
+  {
+    "name": "Göteborgs Tekniska College",
+    "description": "Technical college located at Lindholmen",
+    "latitude": 57.7056,
+    "longitude": 11.9392
+  },
+  {
+    "name": "Radisson Blu Riverside Hotel",
+    "description": "Modern hotel with riverside views",
+    "latitude": 57.7071,
+    "longitude": 11.9376
+  },
+  {
+    "name": "Lindholmen Art Hall",
+    "description": "Contemporary art exhibitions and cultural events",
+    "latitude": 57.708,
+    "longitude": 11.9389
+  },
+  {
+    "name": "Gothenburg Film Studios",
+    "description": "Film and media production studios",
+    "latitude": 57.7048,
+    "longitude": 11.9375
+  },
+  {
+    "name": "Ceres Park",
+    "description": "Small green area next to residential buildings",
+    "latitude": 57.7052,
+    "longitude": 11.9357
+  }
+]
