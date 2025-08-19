@@ -1,26 +1,27 @@
 import ListItem from "../ListItem/ListItem";
 import locations from "../../data/locations.json";
+import { getDistanceInM } from "../../utils/distance";
 
-export default function LocationList() {
-  const randomLocations = [...locations]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 4);
-
-  // Add logic to calculate distance from current location, sort destinations based on distance
-
-  // Add logic to save visited locations and exclude them from future lists
-
+export default function LocationList({ userLocation }) {
   return (
     <div>
-      {randomLocations.map((location, index) => (
-        <ListItem
-          key={index}
-          name={location.name}
-          description={location.description}
-          longitude={location.longitude}
-          latitude={location.latitude}
-        />
-      ))}
+      {locations.map((location, index) => {
+        const distance = getDistanceInM(userLocation, {
+          lat: location.latitude,
+          lng: location.longitude,
+        });
+
+        return (
+          <ListItem
+            key={index}
+            name={location.name}
+            artist={location.artist}
+            description={location.description}
+            distance={distance}
+            exercise={location.exercise}
+          />
+        );
+      })}
     </div>
   );
 }
