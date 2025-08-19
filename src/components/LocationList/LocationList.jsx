@@ -6,6 +6,8 @@ export default function LocationList() {
     .sort(() => 0.5 - Math.random())
     .slice(0, 4);
 
+  // Add logic to calculate distance from current location, sort destinations based on distance
+
   // Add logic to save visited locations and exclude them from future lists
 
   return (
