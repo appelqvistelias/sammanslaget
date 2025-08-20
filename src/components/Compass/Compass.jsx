@@ -3,12 +3,11 @@ import "./Compass.css"; // import CSS file
 import DistanceViewer from "../DistanceViewer/DistanceViewer";
 import { getBearing, getDistance, getShortestAngleDiff } from "../../utils/geo";
 
-export default function Compass({ target }) {
+export default function Compass({ target, onArrived }) {
   const [heading, setHeading] = useState(0);
   const [position, setPosition] = useState(null);
   const [bearing, setBearing] = useState(0);
   const [distance, setDistance] = useState(null);
-  const [permissionGranted, setPermissionGranted] = useState(false);
   const [displayAngle, setDisplayAngle] = useState(0);
   const [arrived, setArrived] = useState(false);
 
@@ -30,22 +29,23 @@ export default function Compass({ target }) {
           const dist = getDistance(
             userPosition.lat,
             userPosition.lon,
-            target.lat,
-            target.lon
+            target.latitude,
+            target.longitude
           );
           setDistance(dist);
           setBearing(
             getBearing(
               userPosition.lat,
               userPosition.lon,
-              target.lat,
-              target.lon
+              target.latitude,
+              target.longitude
             )
           );
 
           //Check 'has arrvied'-state, true if users current position is equal or closer than 20 meters to destination.
           if (dist <= 20) {
             setArrived(true);
+            if (onArrived) onArrived();
           }
         },
         (err) => console.error("Geolocation error:", err),
@@ -79,25 +79,6 @@ export default function Compass({ target }) {
       true
     );
     window.addEventListener("deviceorientation", handleOrientation, true);
-    setPermissionGranted(true);
-  };
-
-  const requestPermission = async () => {
-    if (
-      typeof DeviceOrientationEvent !== "undefined" &&
-      typeof DeviceOrientationEvent.requestPermission === "function"
-    ) {
-      try {
-        const response = await DeviceOrientationEvent.requestPermission();
-        if (response === "granted") {
-          startOrientation();
-        }
-      } catch (err) {
-        console.error("Permission denied:", err);
-      }
-    } else {
-      startOrientation();
-    }
   };
 
   //arrow animation
@@ -122,25 +103,16 @@ export default function Compass({ target }) {
 
   return (
     <div className="compass-container">
-      <h2>Find Your Way</h2>
-
-      {!permissionGranted ? (
-        <button onClick={requestPermission} className="enable-btn">
-          Enable Compass
-        </button>
-      ) : (
-        <>
-          <div className="compass">
-            <img
-              src="arrowTarget.svg"
-              alt="target arrow"
-              className="arrow"
-              style={{ transform: `rotate(${displayAngle}deg)` }}
-            />
-          </div>
-          <DistanceViewer distance={distance} />
-        </>
-      )}
+      <DistanceViewer distance={distance} />
+      <div className="compass">
+        <img src="compass_bg.png" alt="compass face" className="compassFace" />
+        <img
+          src="compass_arrowCenter.png"
+          alt="target arrow"
+          className="arrow"
+          style={{ transform: `rotate(${displayAngle}deg)` }}
+        />
+      </div>
     </div>
   );
 }
