@@ -1,13 +1,18 @@
+import style from "./Home.module.css";
+
 export default function Home() {
   return (
-    <main className="main">
-      <div className="mainHeading">
-        <img src="/smallLogo.svg" className="logo" alt="kompassicon" />
-        <h1>Aktivitets</h1>
-        <h1>kompassen</h1>
+    <main className={style.main}>
+      <div className={style.header}>
+        <img src="/smallLogo.svg" className={style.logo} alt="kompassicon" />
+        <div>
+          <h1 className={style.mainHeading}>Aktivitets</h1>
+          <h1 className={style.mainHeading}>kompassen</h1>
+        </div>
       </div>
-      <section className="introText">
-        <div className="text">
+      <p>Gemensamt i en riktning</p>
+      <section className={style.introText}>
+        <div className={style.text}>
           <p>Håll ihop i gruppen och följ kompasspilen</p>
           <p>Ni besöker fyra destinationer på vägen</p>
           <p>Samtalskort kan dras </p>
