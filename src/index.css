@@ -1,3 +1,12 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --background: #efffed;
+  --primary-light: #a3d681;
+  --dark-green: #48742c;
+  --red-button: #d2191c;
+}
+
 * {
   padding: 0;
   margin: 0;
