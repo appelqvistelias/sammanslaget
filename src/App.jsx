@@ -5,6 +5,7 @@ import LocationList from "./components/LocationList/LocationList";
 
 function App() {
   const [userLocation, setUserLocation] = useState(null);
+  const karlatornet = { lat: 57.70986997664876, lon: 11.939058824329294 };
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <>
-      <Compass />
+      <Compass target={karlatornet} />
       <LocationList userLocation={userLocation} />
     </>
   );
