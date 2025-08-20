@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="main">
       <div className="mainHeading">
-        <img className="logo" alt="kompassicon" />
+        <img src="/smallLogo.svg" className="logo" alt="kompassicon" />
         <h1>Aktivitets</h1>
         <h1>kompassen</h1>
       </div>
