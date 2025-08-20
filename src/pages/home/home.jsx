@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import style from "./Home.module.css";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <main className={style.main}>
       <div className={style.header}>
@@ -29,7 +33,10 @@ export default function Home() {
             Är ni taggade? Tryck på knappen nedan!
           </p>
         </div>
-        <button>Kör igång!</button>
+        <PrimaryButton
+          textContent="Kör igång!"
+          onClick={() => navigate("/compass")}
+        />
         <div className={style.about}>
           <h2 className={style.secondaryHeader}>Om webbplatsen</h2>
           <hr className={style.ruler} />
