@@ -2,17 +2,25 @@
 
 .main {
   background-color: var(--background);
+  height: 100vh;
+  padding: 3rem;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem;
+  padding: 3rem 5rem;
   gap: 0.5rem;
 }
 
-.mainHeading {
+.mainHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainHeader {
   font-family: "Rubik Doodle Shadow", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -20,11 +28,26 @@
   line-height: 4rem;
 }
 
-.logo {
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .introText {
+  background-color: var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.8rem;
+  gap: 2rem;
+  padding: 3rem;
 }
 
 .text {
+  font-family: "Inter", system-ui;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
 }
