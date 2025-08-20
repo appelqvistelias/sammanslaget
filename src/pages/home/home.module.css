@@ -2,7 +2,6 @@
 
 .main {
   background-color: var(--background);
-  height: 100vh;
   padding: 3rem;
 }
 
@@ -45,9 +44,42 @@
   padding: 3rem;
 }
 
-.text {
+.heroText {
   font-family: "Inter", system-ui;
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
+}
+
+.about {
+  background-color: var(--background-light);
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.secondaryHeader {
+  font-family: "Inter", system-ui;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.ruler {
+  background-color: var(--primary-light);
+  height: 0.3rem;
+  border-radius: 0.8rem;
+  border: none;
+  margin: 1rem 0;
+}
+
+.aboutTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.aboutText {
+  font-family: "Inter", system-ui;
+  font-weight: 400;
+  font-size: 1.8rem;
 }
