@@ -3,6 +3,10 @@
 .main {
   background-color: var(--background);
   padding: 3rem;
+  background-image: url("/public/backgroundLong.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .header {
