@@ -10,13 +10,12 @@ export default function Endpage() {
       <h1>Grattis!</h1>
       <p>Ni klarade det!</p>
     </div>
-    <img
-      src="/confetti.svg"
-      alt="konfetti"
-      onClick={() => navigate("/compass")}
-    />
+    <img src="/confetti.svg" alt="konfetti" />
     <div className={style.buttons}>
-      <PrimaryButton textContent={"Ny promenad"} />
+      <PrimaryButton
+        textContent={"Ny promenad"}
+        onClick={() => navigate("/compass")}
+      />
       <PrimaryButton textContent={"Avsluta"} onClick={() => navigate("/")} />
     </div>
   </main>;
