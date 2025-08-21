@@ -2,8 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import "./Compass.css"; // import CSS file
 import DistanceViewer from "../DistanceViewer/DistanceViewer";
 import { getBearing, getDistance, getShortestAngleDiff } from "../../utils/geo";
+import { useNavigate } from "react-router-dom";
 
-export default function Compass({ target, onArrived }) {
+export default function Compass({ target }) {
+  const navigate = useNavigate();
   const [heading, setHeading] = useState(0);
   const [position, setPosition] = useState(null);
   const [bearing, setBearing] = useState(0);
@@ -43,9 +45,9 @@ export default function Compass({ target, onArrived }) {
           );
 
           //Check 'has arrvied'-state, true if users current position is equal or closer than 20 meters to destination.
-          if (dist <= 20) {
+          if (dist <= 10 && !arrived) {
             setArrived(true);
-            if (onArrived) onArrived();
+            navigate(`/location`);
           }
         },
         (err) => console.error("Geolocation error:", err),
@@ -59,27 +61,6 @@ export default function Compass({ target, onArrived }) {
       }
     };
   }, [target]);
-
-  /* const startOrientation = () => {
-    function handleOrientation(event) {
-      let deviceHeading = null;
-      if (event.webkitCompassHeading != null) {
-        deviceHeading = event.webkitCompassHeading;
-      } else if (event.alpha != null) {
-        deviceHeading = 360 - event.alpha;
-      }
-
-      if (deviceHeading != null) {
-        setHeading((prev) => prev + 0.1 * (deviceHeading - prev));
-      }
-    }
-    window.addEventListener(
-      "deviceorientationabsolute",
-      handleOrientation,
-      true
-    );
-    window.addEventListener("deviceorientation", handleOrientation, true);
-  }; */
 
   // handle orientation
   useEffect(() => {
