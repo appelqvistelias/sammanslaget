@@ -1,7 +1,9 @@
 [
   {
-    "name": "Polaren (1980)",
+    "name": "Polaren",
+    "year": "(1980)",
     "artist": "Charles Brånå",
+    "url": "/locationThree.svg",
     "latitude": 57.70433,
     "longitude": 11.936,
     "exercise": {
@@ -11,8 +13,10 @@
     "description": "Skulpturen utforskar idéer om rörelse och transformation, som om en fast form kunde öppnas och avslöja sitt inre. Den ovala strukturen och delningen i skivor ger en känsla av både mysterium och nyfikenhet, som om vi betraktar något som inte helt hör hemma i vår värld. Brånå ville skapa en balans mellan det kända och det främmande, där betraktaren själv fyller i rörelsen och berättelse."
   },
   {
-    "name": "Medmänskligheten (1992)",
+    "name": "Medmänskligheten",
+    "year": "(1992)",
     "artist": "Eino Hanski",
+    "url": "/locationTwo.svg",
     "latitude": 57.705083,
     "longitude": 11.936305,
     "exercise": {
@@ -22,8 +26,10 @@
     "description": "Verket symboliserar kraften i hjälp och mottagande, där den utsträckta handen uttrycker både styrka och öppenhet. Granitens splittring visar kampen och motståndet som måste övervinnas för att nå trygghet. Hanski ville med detta gestalta sin egen erfarenhet av flykt och den mänskliga gemenskap som gjorde en ny start möjlig."
   },
   {
-    "name": "Your 15 minutes of fame (2012)",
+    "name": "Your 15 minutes of fame",
+    "year": "(2012)",
     "artist": "Tina Frausin",
+    "url": "/locationOne.svg",
     "latitude": 57.705999,
     "longitude": 11.936167,
     "exercise": {
@@ -33,8 +39,10 @@
     "description": "Konstverket utforskar idén om att varje individ kan få sin stund i rampljuset, och bjuder in betraktaren att själv ta plats på scenen. Genom att kombinera konst, scen och sittplats vill Frausin skapa en lekfull men reflekterande upplevelse av synlighet och delaktighet. Verket påminner om vår längtan efter uppmärksamhet och gemenskap i vardagen."
   },
   {
-    "name": "Di-Edersekvensen (1994)",
+    "name": "Di-Edersekvensen",
+    "year": "(1994)",
     "artist": "Gert Marcus",
+    "url": "/locationFour.svg",
     "latitude": 57.704833,
     "longitude": 11.938194,
     "exercise": {
@@ -44,8 +52,10 @@
     "description": "Verket handlar om förändring, rörelse och perception, där färg- och formspråket skapar en gradvis transformation som engagerar hela platsen. Marcus ville att betraktaren själv skulle uppleva sekvensen som något dynamiskt, som en utveckling från en början till ett nytt stadium. Skulpturen gestaltar kraften i påverkan och förändring, samtidigt som den öppnar för egna tolkningar kopplade till omgivningen."
   },
   {
-    "name": "Gränslös Tanke (1997)",
+    "name": "Gränslös Tanke",
+    "year": "(1997)",
     "artist": "Eino Hanski",
+    "url": "/locationFour.svg",
     "latitude": 57.705861,
     "longitude": 11.937833,
     "exercise": {

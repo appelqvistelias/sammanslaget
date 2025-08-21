@@ -4,8 +4,8 @@ import "./App.css";
 
 import Home from "./pages/home/Home";
 import CompassPage from "./pages/compass/CompassPage";
-import Exercise from "./pages/exercise/Exercise";
 import Location from "./pages/location/Location";
+import Endpage from "./pages/endpage/Endpage";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/compass" element={<CompassPage />} />
-        <Route path="/exercise" element={<Exercise />} />
-        <Route path="/location/:id" element={<Location />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/endpage" element={<Endpage />} />
       </Routes>
     </Router>
   );
