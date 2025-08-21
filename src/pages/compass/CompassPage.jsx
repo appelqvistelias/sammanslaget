@@ -67,7 +67,7 @@ export default function CompassPage() {
     // save an index to local storage, incrementing by 1
     localStorage.setItem("destinationIndex", currentIndex + 1);
     // now navigate to location page
-    navigate(`/location`);
+    navigate(`/location/`);
   };
 
   const handleStarterClick = () => {

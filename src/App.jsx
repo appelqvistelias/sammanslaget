@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/compass" element={<CompassPage />} />
         <Route path="/exercise" element={<Exercise />} />
-        <Route path="/location/:id" element={<Location />} />
+        <Route path="/location/" element={<Location />} />
       </Routes>
     </Router>
   );
