@@ -1,5 +1,5 @@
 .button {
-  background-color: var(--primary-light);
+  background-color: var(--button-bg, var(--primary-light));
   color: var(--black);
   width: 100%;
   border: none;
@@ -13,7 +13,7 @@
 }
 
 .button:active {
-  background-color: var(--dark-green);
+  background-color: var(--button-active-bg, var(--dark-green));
   color: var(--black);
   box-shadow: none;
   transform: translateY(3px);
