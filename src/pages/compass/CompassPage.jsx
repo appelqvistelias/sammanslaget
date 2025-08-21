@@ -70,7 +70,7 @@ export default function CompassPage() {
         {!permissionGranted ? (
           <PrimaryButton
             onClick={requestPermission}
-            textContent={"Enable Compass"}
+            textContent={"Tillåt kompass"}
           />
         ) : (
           <Compass target={destination} />
