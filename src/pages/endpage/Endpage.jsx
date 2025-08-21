@@ -21,6 +21,8 @@ export default function Endpage() {
           <PrimaryButton
             textContent={"Avsluta"}
             onClick={() => navigate("/")}
+            bgColor="#FEB465"
+            activeBgColor="#E5943C"
           />
         </div>
       </div>
