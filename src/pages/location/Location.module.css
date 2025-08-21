@@ -1,1 +1,96 @@
 /* Location Page Styling */
+
+.main {
+  background-color: var(--background);
+  padding: 3rem;
+  background-image: url("/public/backgroundLong.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mainHeader {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.imageSection,
+.activitySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.artist {
+  font-family: "Inter", system-ui;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.activityTextContainer {
+  background-color: var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.8rem;
+  gap: 2rem;
+  padding: 3rem;
+  width: 100%;
+}
+
+.activityHeader {
+  font-family: "Inter", system-ui;
+  font-weight: 600;
+  font-size: 2.8rem;
+}
+
+.activityText {
+  font-family: "Inter", system-ui;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.about {
+  background-color: var(--background-light);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.aboutHeader {
+  font-family: "Inter", system-ui;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.ruler {
+  background-color: var(--primary-light);
+  height: 0.3rem;
+  border-radius: 0.8rem;
+  border: none;
+  margin: 1rem 0;
+}
+
+.aboutTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.aboutText {
+  font-family: "Inter", system-ui;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
