@@ -46,11 +46,11 @@ export default function Home() {
               känna personer bättre. Den fungerar både för att lära känna nya
               personer samt för personer som redan känner varandra. Syftet är gå
               promenader tillsammans och upptäcka kultur och historiska platser
-              på Lindholmen samt göra gruppaktiviteter längs vägen.{" "}
+              på Lindholmen samt göra gruppaktiviteter längs vägen.
             </p>
             <p className={style.aboutText}>
               Är det lite stelt? Ingen fara! Dra ett samtalskort så får ni
-              förslag på ämnen att prata om.{" "}
+              förslag på ämnen att prata om.
             </p>
             <p className={style.aboutText}>
               Vårt mål är att skapa en trygg miljö där ni som grupp får uppleva
