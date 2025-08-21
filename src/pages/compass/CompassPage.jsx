@@ -18,7 +18,6 @@ export default function CompassPage() {
   const [starter, setStarter] = useState("");
   const [showStarter, setShowStarter] = useState(false);
   const [permissionGranted, setPermissionGranted] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const requestPermission = async () => {
     if (
@@ -47,28 +46,14 @@ export default function CompassPage() {
     );
 
     if (currentIndex >= 4) {
-      navigate("/end");
+      localStorage.setItem("destinationIndex", 0);
+      navigate("/home");
       return;
     }
 
     setDestination(locations[currentIndex]);
     setStarter(getRandomStarter());
   }, [navigate]);
-
-  const handleArrived = () => {
-    setShowSuccess(true);
-  };
-
-  const handleContinue = () => {
-    const currentIndex = parseInt(
-      localStorage.getItem("destinationIndex") || "0",
-      10
-    );
-    // save an index to local storage, incrementing by 1
-    localStorage.setItem("destinationIndex", currentIndex + 1);
-    // now navigate to location page
-    navigate(`/location/`);
-  };
 
   const handleStarterClick = () => {
     setStarter(getRandomStarter());
@@ -85,30 +70,23 @@ export default function CompassPage() {
             onClick={requestPermission}
             textContent={"Enable Compass"}
           />
-        ) : showSuccess ? (
-          <div className={styles.successMessage}>
-            <p>🎉 Du har kommit fram!</p>
-            <PrimaryButton onClick={handleContinue} textContent="Gå vidare" />
-          </div>
         ) : (
-          <Compass target={destination} onArrived={handleArrived} />
+          <Compass target={destination} />
         )}
 
-        {!showSuccess && (
-          <section className={styles.conversationContainer}>
-            <article className={styles.conversationCard}>
-              {!showStarter ? (
-                <p>Följ pilen för att komma fram till första upplevelsen</p>
-              ) : (
-                <p>{starter}</p>
-              )}
-            </article>
-            <PrimaryButton
-              onClick={handleStarterClick}
-              textContent={showStarter ? "Nytt ämne" : "Samtalsämne"}
-            />
-          </section>
-        )}
+        <section className={styles.conversationContainer}>
+          <article className={styles.conversationCard}>
+            {!showStarter ? (
+              <p>Följ pilen för att komma fram till första upplevelsen</p>
+            ) : (
+              <p>{starter}</p>
+            )}
+          </article>
+          <PrimaryButton
+            onClick={handleStarterClick}
+            textContent={showStarter ? "Nytt ämne" : "Samtalsämne"}
+          />
+        </section>
       </div>
     </main>
   );
