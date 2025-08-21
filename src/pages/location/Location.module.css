@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,16 +23,19 @@
   line-height: 4rem;
 }
 
+.imageSection,
+.activitySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
 .artist {
   font-family: "Inter", system-ui;
   font-weight: 500;
   font-size: 1.6rem;
-}
-
-.activityHeader {
-  font-family: "Inter", system-ui;
-  font-weight: 600;
-  font-size: 2.8rem;
 }
 
 .activityTextContainer {
@@ -40,6 +46,13 @@
   border-radius: 0.8rem;
   gap: 2rem;
   padding: 3rem;
+  width: 100%;
+}
+
+.activityHeader {
+  font-family: "Inter", system-ui;
+  font-weight: 600;
+  font-size: 2.8rem;
 }
 
 .activityText {
@@ -52,9 +65,10 @@
   background-color: var(--background-light);
   border-radius: 0.8rem;
   padding: 1rem;
+  width: 100%;
 }
 
-.secondaryHeader {
+.aboutHeader {
   font-family: "Inter", system-ui;
   font-weight: 500;
   font-size: 2rem;
