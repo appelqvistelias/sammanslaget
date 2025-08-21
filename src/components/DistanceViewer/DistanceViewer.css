@@ -5,6 +5,9 @@
   align-items: center;
   gap: 1rem;
   font-size: 1.5rem;
+  font-family: "Inter";
+  color: var(--dark-green);
+  font-weight: 500;
 }
 
 .goalBird {
