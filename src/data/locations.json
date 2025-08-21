@@ -3,6 +3,7 @@
     "name": "Polaren",
     "year": "(1980)",
     "artist": "Charles Brånå",
+    "url": "/locationThree.svg",
     "latitude": 57.70433,
     "longitude": 11.936,
     "exercise": {
@@ -15,6 +16,7 @@
     "name": "Medmänskligheten",
     "year": "(1992)",
     "artist": "Eino Hanski",
+    "url": "/locationTwo.svg",
     "latitude": 57.705083,
     "longitude": 11.936305,
     "exercise": {
@@ -27,6 +29,7 @@
     "name": "Your 15 minutes of fame",
     "year": "(2012)",
     "artist": "Tina Frausin",
+    "url": "/locationOne.svg",
     "latitude": 57.705999,
     "longitude": 11.936167,
     "exercise": {
@@ -39,6 +42,7 @@
     "name": "Di-Edersekvensen",
     "year": "(1994)",
     "artist": "Gert Marcus",
+    "url": "/locationFour.svg",
     "latitude": 57.704833,
     "longitude": 11.938194,
     "exercise": {
@@ -51,6 +55,7 @@
     "name": "Gränslös Tanke",
     "year": "(1997)",
     "artist": "Eino Hanski",
+    "url": "/locationFour.svg",
     "latitude": 57.705861,
     "longitude": 11.937833,
     "exercise": {

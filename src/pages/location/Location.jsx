@@ -8,7 +8,6 @@ export default function Location() {
   const [showActivity, setShowActivity] = useState(false);
   const navigate = useNavigate();
   const locationIndex = localStorage.getItem("destinationIndex") || 0;
-  //console.log(locationIndex);
 
   const handleNextDestination = () => {
     const currentIndex = parseInt(
@@ -19,7 +18,7 @@ export default function Location() {
     localStorage.setItem("destinationIndex", String(nextIndex));
     if (nextIndex >= 4) {
       localStorage.removeItem("destinationIndex");
-      navigate("/");
+      navigate("/endpage");
     } else {
       navigate("/compass");
     }
@@ -36,7 +35,7 @@ export default function Location() {
                 " " +
                 locations[locationIndex].artist}
             </p>
-            <img src="/locationOne.svg" alt="Bild på konstverket" />
+            <img src={locations[locationIndex].url} alt="Bild på konstverket" />
             <PrimaryButton
               textContent={"Starta aktivitet"}
               onClick={() => setShowActivity(true)}

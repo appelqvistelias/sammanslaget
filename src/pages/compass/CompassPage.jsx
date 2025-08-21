@@ -18,6 +18,7 @@ export default function CompassPage() {
   const [starter, setStarter] = useState("");
   const [showStarter, setShowStarter] = useState(false);
   const [permissionGranted, setPermissionGranted] = useState(false);
+  const [savedIndex, setSavedIndex] = useState(0);
 
   const requestPermission = async () => {
     if (
@@ -51,6 +52,7 @@ export default function CompassPage() {
       return;
     }
 
+    setSavedIndex(currentIndex);
     setDestination(locations[currentIndex]);
     setStarter(getRandomStarter());
   }, [navigate]);
@@ -77,7 +79,11 @@ export default function CompassPage() {
         <section className={styles.conversationContainer}>
           <article className={styles.conversationCard}>
             {!showStarter ? (
-              <p>Följ pilen för att komma fram till första upplevelsen</p>
+              <p>
+                {savedIndex === 0
+                  ? "Följ pilen för att komma fram till första upplevelsen"
+                  : "Följ pilen för att komma fram till nästa upplevelse"}
+              </p>
             ) : (
               <p>{starter}</p>
             )}
