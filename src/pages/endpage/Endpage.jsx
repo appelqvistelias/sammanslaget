@@ -6,18 +6,23 @@ export default function Endpage() {
   const navigate = useNavigate();
 
   return (
-    <main>
-      <div className={style.congratulations}>
-        <h1>Grattis!</h1>
-        <p>Ni klarade det!</p>
-      </div>
-      <img src="/confetti.svg" alt="konfetti" />
-      <div className={style.buttons}>
-        <PrimaryButton
-          textContent={"Ny promenad"}
-          onClick={() => navigate("/compass")}
-        />
-        <PrimaryButton textContent={"Avsluta"} onClick={() => navigate("/")} />
+    <main className={style.main}>
+      <div className={style.wrapper}>
+        <div className={style.congratulations}>
+          <h1 className={style.header}>Grattis!</h1>
+          <p className={style.text}>Ni klarade det!</p>
+        </div>
+        <img src="/confetti.svg" alt="konfetti" />
+        <div className={style.buttons}>
+          <PrimaryButton
+            textContent={"Ny promenad"}
+            onClick={() => navigate("/compass")}
+          />
+          <PrimaryButton
+            textContent={"Avsluta"}
+            onClick={() => navigate("/")}
+          />
+        </div>
       </div>
     </main>
   );
