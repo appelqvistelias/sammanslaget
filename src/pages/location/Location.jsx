@@ -8,7 +8,7 @@ export default function Location() {
         <h1 className={style.mainHeader}>Namn på platsen</h1>
         <div className={style.imageSection}>
           <p className={style.artist}>Årtal, Konstnär</p>
-          <img />
+          <img src="/locationOne.svg" alt="Bild på konstverket" />
           <PrimaryButton textContent={"Starta aktivitet"} />
         </div>
         <div className={style.activitySection}>
