@@ -1,1 +1,31 @@
-/* Compass Page Styling */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+}
+
+.conversationCard {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  max-width: 90%;
+  border-radius: 12px;
+  background-color: var(--primary-light);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.conversationCard p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #333;
+  align-self: flex-end;
+}
+
+.conversationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
