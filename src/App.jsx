@@ -1,35 +1,22 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Compass from "./components/Compass/Compass";
-import LocationList from "./components/LocationList/LocationList";
+
+import Home from "./pages/home/Home";
+import CompassPage from "./pages/compass/CompassPage";
+import Exercise from "./pages/exercise/Exercise";
+import Location from "./pages/location/Location";
 
 function App() {
-  const [userLocation, setUserLocation] = useState(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-        },
-        (error) => {
-          console.error(error);
-          setUserLocation({ lat: 57.705896, lng: 11.936357 }); // Fallback position
-        }
-      );
-    }
-  }, []);
-
-  if (!userLocation) return <p>Hämtar position…</p>;
-
   return (
-    <>
-      <Compass />
-      <LocationList userLocation={userLocation} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/compass" element={<CompassPage />} />
+        <Route path="/exercise" element={<Exercise />} />
+        <Route path="/location/:id" element={<Location />} />
+      </Routes>
+    </Router>
   );
 }
 

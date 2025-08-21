@@ -3,51 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #f3f3f3;
-  font-family: Arial, sans-serif;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.enable-btn {
-  padding: 10px 16px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.enable-btn:hover {
-  background: #1e4fc5;
 }
 
 .compass {
   position: relative;
   width: 170px;
   height: 170px;
-  border-radius: 50%;
-  background: rgb(241, 229, 100);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 40%;
+  margin-bottom: 40%;
 }
 
 .arrow {
   position: absolute;
-  height: 150px;
-  width: 150px;
   transform-origin: 50% 50%;
 }
 
-/* .readout {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #333;
+.distanceContainer {
+  margin-bottom: 25px;
 }
- */
