@@ -4,6 +4,7 @@ import locations from "../../data/locations.json";
 import starters from "../../data/conversationStarters.json";
 import { useNavigate } from "react-router-dom";
 import styles from "./CompassPage.module.css";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
 //gets a conversation topic from the converstion topics json list
 function getRandomStarter() {
@@ -17,6 +18,7 @@ export default function CompassPage() {
   const [starter, setStarter] = useState("");
   const [showStarter, setShowStarter] = useState(false);
   const [permissionGranted, setPermissionGranted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const requestPermission = async () => {
     if (
@@ -54,13 +56,17 @@ export default function CompassPage() {
   }, [navigate]);
 
   const handleArrived = () => {
+    setShowSuccess(true);
+  };
+
+  const handleContinue = () => {
     const currentIndex = parseInt(
       localStorage.getItem("destinationIndex") || "0",
       10
     );
-    //save an index to local storage
+    // save an index to local storage, incrementing by 1
     localStorage.setItem("destinationIndex", currentIndex + 1);
-    //add navigation to location page
+    // now navigate to location page
     navigate(`/location`);
   };
 
@@ -72,26 +78,38 @@ export default function CompassPage() {
   if (!destination) return <p>Laddar..</p>;
 
   return (
-    <div className={styles.page}>
-      {!permissionGranted ? (
-        <button onClick={requestPermission} className={styles.enableBtn}>
-          Enable Compass
-        </button>
-      ) : (
-        <Compass target={destination} onArrived={handleArrived} />
-      )}
-      <section className={styles.conversationContainer}>
-        <article className={styles.conversationCard}>
-          {!showStarter ? (
-            <p>Följ pilen för att komma fram till första upplevelsen</p>
-          ) : (
-            <p>{starter}</p>
-          )}
-        </article>
-        <button onClick={handleStarterClick}>
-          {showStarter ? "Nytt ämne" : "Samtalsämne"}
-        </button>
-      </section>
-    </div>
+    <main className={styles.mainContainer}>
+      <div className={styles.page}>
+        {!permissionGranted ? (
+          <PrimaryButton
+            onClick={requestPermission}
+            textContent={"Enable Compass"}
+          />
+        ) : showSuccess ? (
+          <div className={styles.successMessage}>
+            <p>🎉 Du har kommit fram!</p>
+            <PrimaryButton onClick={handleContinue} textContent="Gå vidare" />
+          </div>
+        ) : (
+          <Compass target={destination} onArrived={handleArrived} />
+        )}
+
+        {!showSuccess && (
+          <section className={styles.conversationContainer}>
+            <article className={styles.conversationCard}>
+              {!showStarter ? (
+                <p>Följ pilen för att komma fram till första upplevelsen</p>
+              ) : (
+                <p>{starter}</p>
+              )}
+            </article>
+            <PrimaryButton
+              onClick={handleStarterClick}
+              textContent={showStarter ? "Nytt ämne" : "Samtalsämne"}
+            />
+          </section>
+        )}
+      </div>
+    </main>
   );
 }
