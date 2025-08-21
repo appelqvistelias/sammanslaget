@@ -5,18 +5,20 @@ import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 export default function Endpage() {
   const navigate = useNavigate();
 
-  <main>
-    <div className={style.congratulations}>
-      <h1>Grattis!</h1>
-      <p>Ni klarade det!</p>
-    </div>
-    <img src="/confetti.svg" alt="konfetti" />
-    <div className={style.buttons}>
-      <PrimaryButton
-        textContent={"Ny promenad"}
-        onClick={() => navigate("/compass")}
-      />
-      <PrimaryButton textContent={"Avsluta"} onClick={() => navigate("/")} />
-    </div>
-  </main>;
+  return (
+    <main>
+      <div className={style.congratulations}>
+        <h1>Grattis!</h1>
+        <p>Ni klarade det!</p>
+      </div>
+      <img src="/confetti.svg" alt="konfetti" />
+      <div className={style.buttons}>
+        <PrimaryButton
+          textContent={"Ny promenad"}
+          onClick={() => navigate("/compass")}
+        />
+        <PrimaryButton textContent={"Avsluta"} onClick={() => navigate("/")} />
+      </div>
+    </main>
+  );
 }
