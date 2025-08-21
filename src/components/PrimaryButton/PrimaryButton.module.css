@@ -1,5 +1,6 @@
 .button {
   background-color: var(--primary-light);
+  color: var(--black);
   width: 100%;
   border: none;
   border-radius: 0.8rem;
@@ -13,6 +14,7 @@
 
 .button:active {
   background-color: var(--dark-green);
+  color: var(--black);
   box-shadow: none;
   transform: translateY(3px);
 }
