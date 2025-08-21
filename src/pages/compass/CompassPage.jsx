@@ -80,8 +80,8 @@ export default function CompassPage() {
       ) : (
         <Compass target={destination} onArrived={handleArrived} />
       )}
-      <section className={styles.conversationCard}>
-        <article>
+      <section className={styles.conversationContainer}>
+        <article className={styles.conversationCard}>
           {!showStarter ? (
             <p>Följ pilen för att komma fram till första upplevelsen</p>
           ) : (

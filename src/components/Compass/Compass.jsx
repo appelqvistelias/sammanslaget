@@ -60,7 +60,7 @@ export default function Compass({ target, onArrived }) {
     };
   }, [target]);
 
-  const startOrientation = () => {
+  /* const startOrientation = () => {
     function handleOrientation(event) {
       let deviceHeading = null;
       if (event.webkitCompassHeading != null) {
@@ -79,7 +79,38 @@ export default function Compass({ target, onArrived }) {
       true
     );
     window.addEventListener("deviceorientation", handleOrientation, true);
-  };
+  }; */
+
+  // handle orientation
+  useEffect(() => {
+    function handleOrientation(event) {
+      let deviceHeading = null;
+      if (event.webkitCompassHeading != null) {
+        deviceHeading = event.webkitCompassHeading;
+      } else if (event.alpha != null) {
+        deviceHeading = 360 - event.alpha;
+      }
+
+      if (deviceHeading != null) {
+        setHeading((prev) => prev + 0.1 * (deviceHeading - prev));
+      }
+    }
+
+    window.addEventListener(
+      "deviceorientationabsolute",
+      handleOrientation,
+      true
+    );
+    window.addEventListener("deviceorientation", handleOrientation, true);
+
+    return () => {
+      window.removeEventListener(
+        "deviceorientationabsolute",
+        handleOrientation
+      );
+      window.removeEventListener("deviceorientation", handleOrientation);
+    };
+  }, []);
 
   //arrow animation
   useEffect(() => {
@@ -103,7 +134,7 @@ export default function Compass({ target, onArrived }) {
 
   return (
     <div className="compass-container">
-      <DistanceViewer distance={distance} />
+      <DistanceViewer distance={distance} className="distanceContainer" />
       <div className="compass">
         <img src="compass_bg.png" alt="compass face" className="compassFace" />
         <img
