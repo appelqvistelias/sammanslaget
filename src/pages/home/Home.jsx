@@ -26,8 +26,8 @@ export default function Home() {
           </p>
           <p className={style.heroText}>Samtalskort kan dras </p>
           <p className={style.heroText}>
-            En signal spelas upp vid destinationen där ni kan utföra en
-            aktivitet och läsa om platsen
+            När ni når destinationen kommer ni för förslag på en aktivitet och
+            kunna läsa om platsen
           </p>
           <p className={style.heroText}>
             Är ni taggade? Tryck på knappen nedan!
